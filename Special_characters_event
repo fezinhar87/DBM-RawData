@@ -1,0 +1,62 @@
+
+{
+  "name": "Username with special characters",
+  "temp": "",
+  "event-type": "20",
+  "_id": "rbVON",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "member",
+      "permission": "ADMINISTRATOR",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "info": "3",
+      "storage": "1",
+      "varName2": "displayname",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "displayname",
+      "comparison": "12",
+      "value": "/^[\\w\\s.-]+$/",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "info": "1",
+      "find": "général",
+      "storage": "1",
+      "varName": "général",
+      "name": "Find Channel"
+    },
+    {
+      "member": "2",
+      "varName": "member",
+      "nickname": "Rules #?",
+      "name": "Set Member Nickname"
+    },
+    {
+      "channel": "5",
+      "varName": "général",
+      "message": "${tempVars(\"member\")}, Change your nickname by removing the special characters.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ],
+  "temp2": "member"
+}
