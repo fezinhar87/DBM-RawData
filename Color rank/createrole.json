@@ -1,0 +1,157 @@
+{
+  "name": "createrole",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "zQAzq",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "role",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: You already have a custom role.\nUse the commands `modifyname` and `modifycolor` to modify the role.",
+      "storage": "1",
+      "varName2": "msg",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "2500",
+      "measurement": "0",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "19",
+      "storage": "1",
+      "varName2": "prefix",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Wrong syntax!\n${tempVars(\"prefix\")}createrole color NameRank.",
+      "storage": "1",
+      "varName2": "msg",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "2500",
+      "measurement": "0",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "color",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "name",
+      "name": "Store Command Params"
+    },
+    {
+      "roleName": "${tempVars(\"name\")}",
+      "hoist": "false",
+      "mentionable": "false",
+      "color": "${tempVars(\"color\")}",
+      "position": "",
+      "storage": "1",
+      "varName": "role",
+      "name": "Create Role"
+    },
+    {
+      "role": "3",
+      "varName": "role",
+      "info": "1",
+      "storage": "1",
+      "varName2": "roleid",
+      "name": "Store Role Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "role",
+      "changeType": "0",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "roleid",
+      "changeType": "0",
+      "value": "tempVars(\"roleid\")",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName2": "",
+      "role": "3",
+      "varName": "role",
+      "name": "Add Member Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member}, you now have the role <@&${tempVars(\"roleid\")}>.\nTo modify the role, use the commands `modifycolor` or `modifyname`.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ]
+}

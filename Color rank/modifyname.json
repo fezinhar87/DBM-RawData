@@ -1,0 +1,137 @@
+{
+  "name": "modifyname",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "WaacM",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "role",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "roledata",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "roledata",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: You do not have to create a role to have a role with your chosen color.",
+      "storage": "1",
+      "varName2": "msg",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "2500",
+      "measurement": "0",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Insert a new role name.",
+      "storage": "1",
+      "varName2": "msg",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "2500",
+      "measurement": "0",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "name",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "roleid",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "roleid",
+      "name": "Store Member Data"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"roleid\")}",
+      "storage": "1",
+      "varName": "role",
+      "name": "Find Role"
+    },
+    {
+      "roleName": "${tempVars(\"name\")}",
+      "hoist": "none",
+      "mentionable": "none",
+      "color": "",
+      "position": "",
+      "storage": "3",
+      "varName": "role",
+      "name": "Edit Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member}, your role has been modified.\nThis is your role: <@&${tempVars(\\\"roleid\\\")}>.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ]
+}

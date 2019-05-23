@@ -1,0 +1,103 @@
+{
+  "name": "deleterole",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "WaacM",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "role",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "roledata",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "roledata",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: You do not have to create a role to have a role with your chosen color.",
+      "storage": "1",
+      "varName2": "msg",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "2500",
+      "measurement": "0",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "roleid",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "roleid",
+      "name": "Store Member Data"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"roleid\")}",
+      "storage": "1",
+      "varName": "role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "3",
+      "varName": "role",
+      "name": "Delete Role"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "role",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "roleid",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member}, your role has been deleted.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ]
+}
